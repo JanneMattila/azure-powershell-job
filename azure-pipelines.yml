@@ -8,7 +8,7 @@ trigger:
       - develop
   paths:
     include:
-      - src/azure-powershell-job
+      - src/*
 
 name: 1.0.$(Rev:r)
 stages:
