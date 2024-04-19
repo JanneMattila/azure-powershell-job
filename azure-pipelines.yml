@@ -23,6 +23,7 @@ stages:
               containerRegistry: "DockerHub"
               repository: $(repository)
               command: "buildAndPush"
+              arguments: --build-arg BUILD_VERSION=$(Build.BuildNumber)
               Dockerfile: "**/Dockerfile"
               tags: |
                 $(Build.BuildNumber)

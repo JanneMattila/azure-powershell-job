@@ -1,10 +1,11 @@
 FROM mcr.microsoft.com/powershell:7.4-alpine-3.17
 
 RUN pwsh -c "Install-Module -Name Az -RequiredVersion 11.5.0 -Scope AllUsers -Repository PSGallery -Force -AllowClobber"
+ARG BUILD_VERSION
 
 COPY prepare.ps1 /bin/
 RUN chmod 755 /bin/prepare.ps1
-RUN /bin/prepare.ps1
+RUN /bin/prepare.ps1 -BuildVersion $BUILD_VERSION
 RUN rm /bin/prepare.ps1
 
 COPY run.ps1 /bin/
