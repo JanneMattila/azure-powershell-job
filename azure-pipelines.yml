@@ -8,6 +8,7 @@ trigger:
       - develop
   paths:
     include:
+      - azure-pipelines.yml
       - src/*
 
 name: 1.0.$(Rev:r)
@@ -22,9 +23,17 @@ stages:
             inputs:
               containerRegistry: "DockerHub"
               repository: $(repository)
-              command: "buildAndPush"
+              command: build
               arguments: --build-arg BUILD_VERSION=$(Build.BuildNumber)
               Dockerfile: "**/Dockerfile"
+              tags: |
+                $(Build.BuildNumber)
+                latest
+          - task: Docker@2
+            inputs:
+              containerRegistry: "DockerHub"
+              repository: $(repository)
+              command: push
               tags: |
                 $(Build.BuildNumber)
                 latest
