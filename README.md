@@ -1,5 +1,9 @@
 # Azure PowerShell Job
 
+[![Build Status](https://dev.azure.com/jannemattila/jannemattila/_apis/build/status%2FJanneMattila.azure-powershell-job?branchName=main)](https://dev.azure.com/jannemattila/jannemattila/_build/latest?definitionId=71&branchName=main)
+[![Docker Pulls](https://img.shields.io/docker/pulls/jannemattila/azure-powershell-job?style=plastic)](https://hub.docker.com/r/jannemattila/azure-powershell-job)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Azure PowerShell Job enables you to run Azure PowerShell script automations.
 
 ## Local development
