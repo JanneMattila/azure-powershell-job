@@ -21,6 +21,7 @@ docker build . -t azure-powershell-job:latest --build-arg BUILD_VERSION=local --
 docker run -it --rm azure-powershell-job:latest
 
 docker run -e AZURE_CLIENT_ID="123" -e SCRIPT_FILE="/scripts/example-job1.ps1" -it --rm azure-powershell-job:latest
+docker run -e AZURE_CLIENT_ID="123" -e AZURE_TENANT_ID="123" -e AZURE_FEDERATED_TOKEN_FILE="/bin/run.ps1" -e SCRIPT_FILE="/scripts/example-job1.ps1" -it --rm azure-powershell-job:latest
 ```
 
 [Azure/azure-powershell](https://github.com/Azure/azure-powershell)
